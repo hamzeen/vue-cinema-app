@@ -1,0 +1,18 @@
+
+# skip node modules
+/node_modules
+
+# remove sys files
+.DS_Store
+Thumbs.db
+
+
+# distribution
+/build
+/dist
+/tmp
+/out-tsc
+/coverage
+
+# IDE
+/.idea
