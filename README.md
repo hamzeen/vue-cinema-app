@@ -1,4 +1,3 @@
-# vue-cinema-app
 # cinema seating app - frontend
 This repo holds the front-end code for a simple cinema seating allocation app.
  written in Vue.js. A static preview of the UI can be found 
