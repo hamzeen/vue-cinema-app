@@ -34,8 +34,8 @@ you can download & install it from [here](https://nodejs.org/en/download).
 
 
 ## improvements
-* Seat could be moved into a deicated component if there are plans to build more features around it.
-* employ typescript. It would help overcome type related issues before runtime since javascript is a dynamically typed language.
+* `Seat` could be moved into a dedicated `component` if there are plans to build more features around it.
+* employ `typescript`. It would help overcome type related issues before runtime since javascript is a `dynamically-typed` language.
 
 ## Screens
 
