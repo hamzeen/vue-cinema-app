@@ -3,9 +3,13 @@
  * the halls available at the facility (i.e. the cinema)
  *
  * @param layout, groups
- * @returns []
+ * @returns {{}}
  */
 export const mapReservationsOnFacility = (layout, groups) => {
+    if (!layout['sections'] || layout['sections'].length === 0) {
+        return null;
+    }
+
     const reservations = getFlatReservations(groups);
 
     for (let section of layout['sections']) {

@@ -4,7 +4,7 @@
       <h1 class="app-title">Cinema <span class="text-green-600">Seating</span></h1>
       <p class="app-secondary-title">{{info}}</p>
 
-      <div class="container" v-if="!hasData">
+      <div class="container" v-if="!hasData || !seatingData">
 
         <h3 class="card-title">unable to load the page</h3><hr>
 
@@ -19,8 +19,8 @@
       </div>
 
 
-      <div v-if="hasData">
-        <div v-for="(section) in data.sections" :key="section.id" class="container">
+      <div v-if="hasData && seatingData">
+        <div v-for="(section) in seatingData.sections" :key="section.id" class="container">
 
           <h3 class="card-title">
             {{section.name}}</h3>
@@ -81,7 +81,7 @@ export default {
     return {
       info: 'Movie: Fast & Furious 7 | Venue: Amsterdam',
       hasData: false,
-      data: {}
+      seatingData: {}
     };
   },
   computed: {
@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     loadData: function() {
-      this.data = jsonUtil.mapReservationsOnFacility(layout, groups);
+      this.seatingData = jsonUtil.mapReservationsOnFacility(layout, groups);
       this.hasData = jsonUtil.containsData(layout);
     }
   },

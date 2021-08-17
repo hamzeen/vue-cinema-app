@@ -112,13 +112,16 @@ p {
   justify-content: space-between;
   list-style-type: none;
   background: rgba(0,0,0,0.1);
+  margin: auto;
+  max-width: 465px;
+
   padding: 5px 10px;
   border-radius: 5px;
   color: $white;
 }
 
 .showcase li {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   margin: 0 10px;
