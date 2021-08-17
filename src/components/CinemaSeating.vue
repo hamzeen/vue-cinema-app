@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="movie-container hello">
+    <div class="movie-container cinemaseating">
       <h1 class="app-title">Cinema <span class="text-green-600">Seating</span></h1>
       <p class="app-secondary-title">{{info}}</p>
 
@@ -73,7 +73,7 @@
   import * as jsonUtil from "../common/helpers/json-utils"
 
 export default {
-  name: 'HelloWorld',
+  name: 'CinemaSeating',
   props: {
     msg: String
   },
