@@ -25,7 +25,7 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * The entire project was done with a `mobile-first` design approach.
 * Components do not perform any heavy javascript operations within them. All are deligated to helper methods.
 * The components utilize vue `lifecycle hooks` when appropriate.
-* Routes have been setup for demonstration of vue-router
+* Routes have been setup for demonstration of `vue-router`
 * The project was generated with vue-cli with support for linting, css preprocessor (sass) & vuex
 * The project follows `SOLID principles`, `DRY`
 
