@@ -27,10 +27,14 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * The `mock data` provided to test the app have been externalized & placed inside dedicated json files.
 * Loading / Parsing the above data has been done in such a way that it **would seamlessly facilitate its replacement with an API call**.
 * Routes have been setup for demonstration of `vue-router`.
-* The project was generated with vue-cli with support for linting, css preprocessor (sass) & vuex
+* The project was generated with vue-cli with support for linting, css preprocessor (sass), e2e testing, vuex
 * The project follows `SOLID principles`, `DRY`
 * The entire project was done with a `mobile-first` design approach & it's responsive.
+* `Linting` has been employed to ensure the sourcecode is standards compliant. 
 
+
+## improvements
+* enable typescript support. This would help overcome type related issues befroe runtime since javascript is a dynamically typed language.
 
 ## Screens
 
