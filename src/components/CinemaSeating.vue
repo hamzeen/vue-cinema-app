@@ -5,7 +5,7 @@
       <p style="color: #989898;">{{info}}</p>
 
 
-      <div class="container" v-if="!hasData">
+      <div class="container" v-if="!seatingData">
 
         <h3 class="card-title">unable to load the page</h3>
         <hr>
@@ -21,7 +21,7 @@
 
       </div>
 
-      <div v-if="hasData">
+      <div v-if="seatingData">
         <div v-for="(section) in seatingData.sections" :key="section.id" class="container">
 
           <h3 style="text-align: left; margin-top: 20px; padding-left: 3%; width: 100%;">
@@ -41,7 +41,7 @@
       </div>
 
       <!-- seat classification legend //-->
-      <ul v-if="hasData" class="showcase">
+      <ul v-if="seatingData" class="showcase">
         <li>
           <div class="seat rank1"></div>
           <small>Rank1</small>
@@ -82,8 +82,7 @@ export default {
   data() {
     return {
       info: 'Movie: Fast & Furious 7 | Venue: Amsterdam',
-      hasData: false,
-      seatingData: {}
+      seatingData: null
     };
   },
   computed: {
@@ -94,8 +93,9 @@ export default {
   },
   methods: {
     loadData: function() {
-      this.seatingData = jsonUtil.mapReservationsOnFacility(layout, groups);
-      this.hasData = this.seatingData && jsonUtil.containsData(layout);
+      if (jsonUtil.containsData(layout)) {
+        this.seatingData = jsonUtil.mapReservationsOnFacility(layout, groups);
+      }
     }
   },
   mounted: function() {
