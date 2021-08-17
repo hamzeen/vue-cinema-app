@@ -26,7 +26,7 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * Components do not perform any heavy javascript operations within them. All are deligated to helper methods.
 * The components utilize vue `lifecycle hooks` when appropriate.
 * The `mock data` provided to test the app have been externalized & placed inside dedicated json files.
-* Loading / Parsing the above data has been done in such a way that it **would seamlessly facilitate the replacement with an API call**.
+* Loading / Parsing the above data has been done in such a way that it **would seamlessly facilitate its replacement with an API call**.
 * Routes have been setup for demonstration of `vue-router`.
 * The project was generated with vue-cli with support for linting, css preprocessor (sass) & vuex
 * The project follows `SOLID principles`, `DRY`
