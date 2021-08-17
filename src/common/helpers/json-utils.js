@@ -36,7 +36,7 @@ export const getFlatReservations = (groups) => {
     // moves parent level props into seats array
     const flatGroups = groups.map((item, idx) => {
         item['seats'].map((seat) => {
-            seat.label = `g${idx+1}`;
+            seat.label = `G${idx+1}`;
             // seat.id = item['id'];
             return seat;
         });
@@ -46,5 +46,26 @@ export const getFlatReservations = (groups) => {
     // returns a flat array of seat reservations
     return [].concat(...flatGroups.map((ap) => ap['seats']));
 };
+
+
+
+function isEmpty(obj){
+    return (Object.keys(obj).length) === 0;
+}
+
+function isObj(obj) {
+    return (typeof obj === 'object') && (obj !== null);
+}
+
+/**
+ * returns if the passed object is valid &
+ * it contains any keys (properties)
+ *
+ * @param obj
+ * @retrun boolean
+ */
+export function containsData(obj) {
+    return isObj(obj) && !isEmpty(obj);
+}
 
 

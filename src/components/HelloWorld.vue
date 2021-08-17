@@ -1,37 +1,62 @@
 <template>
   <div>
     <div class="movie-container hello">
-      <h1>Cinema <span class="text-indigo-600">Seating</span></h1>
-      <p style="color: #989898;">{{info}}</p>
+      <h1 class="app-title">Cinema <span class="text-green-600">Seating</span></h1>
+      <p class="app-secondary-title">{{info}}</p>
 
-      <div v-for="(section) in viewerMap.sections" :key="section.id" class="container">
+      <div class="container" v-if="!hasData">
 
-        <h3 style="text-align: left; margin-top: 20px; padding-left: 3%; width: 100%;">
-          {{section.name}}</h3>
-        <hr style="width: 95%">
+        <h3 class="card-title">About</h3><hr>
 
-        <img  src="../assets/screen.svg"
-              alt="triangle with all three sides equal"
-              height="87" width="100" />
+        <p class="notification">
+          Oops! there was a problem with the data we received. <br/>
+          Please contact our client service for more support on this:
+            <a href="tel:+316 5380 5380">+316 5380 4321</a>.<br/>
+          We regret for the  inconvenience.
+          <router-link to="/">here</router-link>
+          to navigate back to landing page.</p>
 
-        <div v-for="row in section.rows" :key="row.id" class="row">
-          <div v-for="seat in row.seats" :key="seat.id"  class="seat" :class="seat['rank']">
-            <span v-if="seat.label">{{seat.label}}</span>
-          </div>
-        </div>
       </div>
 
-      <!-- seat classification legend //-->
-      <ul class="showcase">
-        <li>
-          <div class="seat"></div>
-          <small>Available</small>
-        </li>
-        <li>
-          <div class="seat occupied"></div>
-          <small>Occupied</small>
-        </li>
-      </ul>
+
+      <div v-if="hasData">
+        <div v-for="(section) in data.sections" :key="section.id" class="container">
+
+          <h3 class="card-title">
+            {{section.name}}</h3>
+          <hr>
+
+          <img  src="../assets/screen.svg"
+                alt="screen this way"
+                height="85" width="100" />
+
+          <div v-for="row in section.rows" :key="row.id" class="row">
+            <div v-for="seat in row.seats" :key="seat.id"  class="seat" :class="seat['rank']">
+              <span v-if="seat.label">{{seat.label}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- seat classification legend //-->
+        <ul class="showcase">
+          <li>
+            <div class="seat rank1"></div>
+            <small>Rank1</small>
+          </li>
+          <li>
+            <div class="seat rank2"></div>
+            <small>Rank2</small>
+          </li>
+          <li>
+            <div class="seat rank3"></div>
+            <small>Rank3</small>
+          </li>
+          <li>
+            <div class="seat rank4"></div>
+            <small>Rank4</small>
+          </li>
+        </ul>
+      </div>
 
     </div>
 
@@ -54,18 +79,25 @@ export default {
   },
   data() {
     return {
-      info: 'Movie: Fast & Furious 7 | Venue: Amsterdam'
+      info: 'Movie: Fast & Furious 7 | Venue: Amsterdam',
+      hasData: false,
+      data: {}
     };
   },
   computed: {
-    // a computed getter
-    reversedMessage: function () {
-      return this.hello.split('').reverse().join('')
-    },
-    viewerMap: function () {
-      return jsonUtil.mapReservationsOnFacility(layout, groups)
+    // a computed getters
+    /*reversedMessage: function() {
+      return this.info.split('').reverse().join('')
+    }*/
+  },
+  methods: {
+    loadData: function() {
+      this.data = jsonUtil.mapReservationsOnFacility(layout, groups);
+      this.hasData = jsonUtil.containsData(layout);
     }
-
+  },
+  mounted: function() {
+    this.loadData();
   }
 }
 </script>
