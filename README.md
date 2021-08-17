@@ -14,6 +14,18 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * start local dev server: ```npm start``` or `npm run serve`
 * preview: <http://localhost:8080>
 
+
+## frontend routes
+* Landing Page: <http://localhost:8080>
+* About Page: <http://localhost:8080/about>
+
+## Features/ Design Decisions
+* The app marks the seats according to its rank & also annotates the seats that are occupied.
+* The entire project was done with a `mobile-first` design approach.
+* Routes were have been setup for demonstration of vue-router
+* The project was generated with vue-cli with support for linting, css preprocessor (sass) & vuex
+* The project follows `SOLID principles`, `DRY`
+
 ## Screens
 
 ![on desktop](https://raw.githubusercontent.com/hamzeen/vue-cinema-app/main/src/assets/screens/001.jpg)
