@@ -30,7 +30,7 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * The project was generated with vue-cli with support for linting, css preprocessor (sass), e2e testing, vuex
 * The project follows `SOLID principles`, `DRY`
 * The entire project was done with a `mobile-first` design approach & it's responsive.
-* `Linting` has been employed to ensure the sourcecode is standards compliant. 
+* `Linting` has been employed to ensure the sourcecode is standards compliant, clean & maintain its quality at all times.
 
 
 ## improvements
