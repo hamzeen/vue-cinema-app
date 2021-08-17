@@ -9,7 +9,7 @@
       <h3 class="card-title">About</h3><hr>
 
       <p class="notification">
-        This is still an empty page, exists only to confirm routing & navigation.
+        This is still an empty page, exists only to confirm routing.
         You can click
         <router-link to="/">here</router-link>
         to navigate back to landing page.</p>
