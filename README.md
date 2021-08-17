@@ -7,8 +7,8 @@ locally.
 
 ## Getting Started
 
-NOTE: Please make sure you have NodeJS installed your machine. If this not the case, 
-you can download & install it from [here](https://nodejs.org/en/download).
+NOTE: Please make sure you have NodeJS installed your machine. If not, 
+you can download it from [here](https://nodejs.org/en/download).
 
 * install dependencies: ```npm install```
 * start local dev server: ```npm start``` or `npm run serve`
