@@ -20,7 +20,7 @@ you can download & install it from [here](https://nodejs.org/en/download).
 * About Page: <http://localhost:8080/about>
 
 ## Features/ Design Decisions
-* The app marks the seats according to its rank & also annotates the seats that are occupied.
+* The app marks (color codes) the seats according to its rank & also annotates the seats that are occupied.
 * The entire project was done with a `mobile-first` design approach.
 * Routes have been setup for demonstration of vue-router
 * The project was generated with vue-cli with support for linting, css preprocessor (sass) & vuex
