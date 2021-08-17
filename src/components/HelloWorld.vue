@@ -6,7 +6,7 @@
 
       <div class="container" v-if="!hasData">
 
-        <h3 class="card-title">About</h3><hr>
+        <h3 class="card-title">unable to load the page</h3><hr>
 
         <p class="notification">
           Oops! there was a problem with the data we received. <br/>
